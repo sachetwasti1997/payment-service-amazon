@@ -6,6 +6,7 @@ spring:
     cancelordertopic: "cancelorder"
     ordercreatedtopic: "orderevent"
     expireordertopic: "expireorder"
+    paymentTopic: "paymentStatusTopic"
     paymentconsumers:
       group-id: payment-service-listeners
     producer:
@@ -19,3 +20,7 @@ spring:
 
 server:
   port: 8084
+  error:
+    include-message: always
+
+STRIPE_SECURE_KEY: ${STRIPE_KEY:8Xc5HXT4fRYeGL5uLyNgaGg4vtMldmLhjtIvD2gLoK4=}
