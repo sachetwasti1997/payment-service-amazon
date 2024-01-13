@@ -5,17 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class OrderCreated {
-    @Id
+@Document
+public class Payment {
     private String orderId;
-    private String status;
-    private String expiresAt;
-    private String itemId;
-    private Integer orderQuantity;
-    private Double orderPrice;
+    @Id
+    private String paymentId;
 }

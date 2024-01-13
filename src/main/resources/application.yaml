@@ -1,13 +1,13 @@
 spring:
   data:
     mongodb:
-      uri: ${ITEM_DB_HOST:mongodb://localhost:27071/item}
+      uri: ${ITEM_DB_HOST:mongodb://localhost:27071/payment}
   kafka:
     cancelordertopic: "cancelorder"
     ordercreatedtopic: "orderevent"
     expireordertopic: "expireorder"
-    itemserviceconsumer:
-      group-id: item-service-listeners
+    paymentconsumers:
+      group-id: payment-service-listeners
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
