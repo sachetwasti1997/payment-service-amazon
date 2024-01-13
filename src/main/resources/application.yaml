@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: ${ITEM_DB_HOST:mongodb://localhost:27071/payment}
+      uri: ${DB_HOST:mongodb://localhost:27071/payment}
   kafka:
     cancelordertopic: "cancelorder"
     ordercreatedtopic: "orderevent"
@@ -18,4 +18,4 @@ spring:
     bootstrap-servers: kafka-service:9092
 
 server:
-  port: 8082
+  port: 8084
