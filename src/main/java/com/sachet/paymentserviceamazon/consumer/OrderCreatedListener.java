@@ -10,7 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.listener.AcknowledgingMessageListener;
 import org.springframework.kafka.support.Acknowledgment;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderCreatedListener implements AcknowledgingMessageListener<String, String> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderCreatedListener.class);
