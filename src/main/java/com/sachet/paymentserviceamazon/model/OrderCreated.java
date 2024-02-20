@@ -18,4 +18,5 @@ public class OrderCreated {
     private String itemId;
     private Integer orderQuantity;
     private Double orderPrice;
+    private String userEmail;
 }
