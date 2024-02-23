@@ -58,8 +58,18 @@ public class PaymentService {
         params.put("currency", "USD");
         params.put("payment_method_types", paymentMethodTypes);
 
+        paymentRepository.save(payment);
+
         return PaymentIntent.create(params);
     }
 
+    public String paymentComplete(PaymentStatus paymentStatus) throws JsonProcessingException {
+        Optional<Payment> getPayment = paymentRepository.findByOrderId(paymentStatus.getOrderId());
+        var payment = getPayment.orElseThrow();
+        payment.setPaymentStatus(paymentStatus.getPaymentStatus());
+        paymentStatusPublisher.publishPaymentStatus(paymentStatus);
+        paymentRepository.save(payment);
+        return paymentStatus.getPaymentStatus();
+    }
 
 }

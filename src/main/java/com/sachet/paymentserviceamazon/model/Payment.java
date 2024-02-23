@@ -18,4 +18,5 @@ public class Payment {
     private String userEmail;
     private Double amount;
     private String orderId;
+    private String paymentStatus;
 }
